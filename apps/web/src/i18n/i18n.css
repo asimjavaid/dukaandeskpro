@@ -1,0 +1,39 @@
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.lang-toggle__btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  min-height: 32px;
+  min-width: 36px;
+  padding: 0 6px;
+  font: var(--type-chip);
+  color: var(--ink-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.lang-toggle__btn--active {
+  color: var(--accent-teal);
+  font-weight: 700;
+  background: var(--accent-teal-soft);
+}
+
+.lang-toggle__btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.lang-toggle__sep {
+  color: var(--ink-secondary);
+  opacity: 0.5;
+  font: var(--type-chip);
+  user-select: none;
+}

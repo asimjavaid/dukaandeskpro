@@ -1,0 +1,249 @@
+/**
+ * DukaanDesk — charcoal chrome, light content, teal accent (UI flat B)
+ * Phase 0 frozen foundation tokens: semantic, RTL-safe, and local-first honest.
+ * Amounts: Western digits + Rs (LTR). System fonts first.
+ */
+
+:root {
+  /* Surface — light neutral content */
+  --bg-canvas: #f3f4f6;
+  --bg-surface: #ffffff;
+  --bg-sunken: #f1f3f5;
+  --bg-overlay: rgba(17, 24, 39, 0.5);
+
+  /* Ink */
+  --ink-primary: #111827;
+  --ink-secondary: #4b5563;
+  --ink-disabled: #6b7280;
+  --ink-inverse: #ffffff;
+
+  /* Brand — charcoal primary + teal accent */
+  --brand-primary: #1f2933;
+  --brand-primary-press: #111827;
+  --brand-primary-soft: #eef1f4;
+  --accent-teal: #0f766e;
+  --accent-teal-soft: #e0f5f1;
+  /* Darker than base so white labels retain contrast on press/hover. */
+  --accent-teal-press: #115e59;
+
+  /* Semantic: green = cash/success, amber = khata/warning, red = danger */
+  --online: #15803d;
+  --offline: #b45309;
+  --success: #15803d;
+  --success-soft: #dcfce7;
+  --warn: #b45309;
+  --warn-soft: #fef3c7;
+  --danger: #b91c1c;
+  --danger-soft: #fee2e2;
+  --info: #0f766e;
+  --info-soft: #e0f5f1;
+
+  /* Borders */
+  --border-subtle: #e5e7eb;
+  --border-strong: #d1d5db;
+  --focus-ring: #0d9488;
+
+  /* Chrome — charcoal top bar + left rail */
+  --chrome-bg: #1f2429;
+  --chrome-ink: #cbd2d9;
+  --chrome-ink-strong: #ffffff;
+  --chrome-muted: #8a949e;
+  --chrome-border: #2f363d;
+  /* Nav dividers: engraved, tone-on-tone with --chrome-bg (dark groove + soft highlight beneath). */
+  --nav-rule-dark: #14181b;
+  --nav-rule-light: #2c333a;
+  --chrome-hover: #2a3036;
+  --chrome-active-bg: #12352f;
+  --chrome-active-ink: #5eead4;
+  --chrome-active-bar: #2dd4bf;
+  --chrome-widget-bg: #2a3036;
+  --chrome-widget-border: #3a424a;
+  --chrome-widget-ink: #e5e9ed;
+  --accent-teal-strong: #115e59;
+  --cdx-total-bg: #1f2429;
+  --cdx-total-label: #99f6e4;
+  --content-bg: #ffffff;
+  --head-bg: #ffffff;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Nastaliq Urdu",
+    "Noto Sans Arabic", Arial, sans-serif;
+  --type-display: 700 24px/32px var(--font-sans);
+  --type-title: 600 20px/28px var(--font-sans);
+  --type-subtitle: 600 16px/24px var(--font-sans);
+  --type-body: 400 16px/24px var(--font-sans);
+  --type-body-strong: 600 16px/24px var(--font-sans);
+  --type-meta: 400 13px/18px var(--font-sans);
+  --type-chip: 600 12px/16px var(--font-sans);
+  --type-button: 600 16px/24px var(--font-sans);
+  --type-amount: 700 20px/28px var(--font-sans);
+
+  /* Spacing (8dp) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* Radius — near-square. --radius: controls; --radius-box: cards, panels, tables, modals. */
+  --radius: 3px;
+  --radius-box: 0px;
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-box);
+  --radius-pill: var(--radius);
+
+  /* Type scale (sizes only; weights come from the --type-* shorthands) */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-md: 14px;
+  --fs-base: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 32px;
+  --type-small: 400 14px/20px var(--font-sans);
+  --type-th: 600 13px/18px var(--font-sans);
+
+  /* Control and row heights */
+  --control-h: 40px;
+  --control-h-sm: 32px;
+  --control-h-lg: 48px;
+  --row-h: 40px;
+  --th-h: 36px;
+
+  /* Modal widths */
+  --modal-sm: 28rem;
+  --modal-md: 40rem;
+  --modal-lg: 56rem;
+  --modal-xl: 72rem;
+
+  /* Elevation — flat: borders instead of shadows; popovers/modals keep one soft shadow. */
+  --elev-1: none;
+  --elev-2: 0 6px 20px rgba(15, 23, 42, 0.14);
+}
+
+
+/* Themes (top bar A / B / C, html[data-theme]). B = :root above. Semantic colours never change. */
+/* A – Slate: pale slate menu, white pages, blue buttons. */
+html[data-theme='a'] {
+  --bg-canvas: #f4f6f9;
+  --bg-surface: #ffffff;
+  --bg-sunken: #eef1f5;
+  --bg-overlay: rgba(15, 23, 42, 0.45);
+  --ink-primary: #0f172a;
+  --ink-secondary: #475569;
+  --ink-disabled: #64748b;
+  --ink-inverse: #ffffff;
+  --brand-primary: #1e3a5f;
+  --brand-primary-press: #152b47;
+  --brand-primary-soft: #eef2f8;
+  --accent-teal: #1d4ed8;
+  --accent-teal-press: #1e40af;
+  --accent-teal-soft: #e5edfd;
+  --online: #15803d;
+  --info: #1d4ed8;
+  --info-soft: #e5edfd;
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --focus-ring: #2563eb;
+  --chrome-bg: #f8fafc;
+  --chrome-ink: #334155;
+  --chrome-ink-strong: #0f172a;
+  --chrome-muted: #64748b;
+  --chrome-border: #e2e8f0;
+  --chrome-hover: #eef2f7;
+  --chrome-active-bg: #e5edfd;
+  --chrome-active-ink: #1d4ed8;
+  --chrome-active-bar: #1d4ed8;
+  --content-bg: #ffffff;
+  --head-bg: #ffffff;
+  --nav-rule-dark: #dbe2ea;
+  --nav-rule-light: #ffffff;
+  --chrome-widget-bg: #ffffff;
+  --chrome-widget-border: #cbd5e1;
+  --chrome-widget-ink: #0f172a;
+  --accent-teal-strong: #1e40af;
+  --cdx-total-bg: #1e3a5f;
+  --cdx-total-label: #bfdbfe;
+}
+/* C – Indigo: warm grey menu, deep indigo buttons. */
+html[data-theme='c'] {
+  --bg-canvas: #f6f5f3;
+  --bg-surface: #fdfdfc;
+  --bg-sunken: #f0eeeb;
+  --bg-overlay: rgba(28, 25, 23, 0.45);
+  --ink-primary: #1c1917;
+  --ink-secondary: #57534e;
+  --ink-disabled: #736c66;
+  --ink-inverse: #ffffff;
+  --brand-primary: #312e81;
+  --brand-primary-press: #26246a;
+  --brand-primary-soft: #efeef8;
+  --accent-teal: #3730a3;
+  --accent-teal-press: #312e81;
+  --accent-teal-soft: #e8e7fb;
+  --online: #15803d;
+  --info: #3730a3;
+  --info-soft: #e8e7fb;
+  --border-subtle: #e7e5e2;
+  --border-strong: #d6d3cf;
+  --focus-ring: #4f46e5;
+  --chrome-bg: #f3f2ef;
+  --chrome-ink: #44403c;
+  --chrome-ink-strong: #1c1917;
+  --chrome-muted: #736c66;
+  --chrome-border: #e2dfdb;
+  --chrome-hover: #ebe9e5;
+  --chrome-active-bg: #e8e7fb;
+  --chrome-active-ink: #3730a3;
+  --chrome-active-bar: #3730a3;
+  --content-bg: #fdfdfc;
+  --head-bg: #fdfdfc;
+  --nav-rule-dark: #dcd8d2;
+  --nav-rule-light: #fcfbf9;
+  --chrome-widget-bg: #fdfdfc;
+  --chrome-widget-border: #d6d3cf;
+  --chrome-widget-ink: #1c1917;
+  --accent-teal-strong: #312e81;
+  --cdx-total-bg: #312e81;
+  --cdx-total-label: #c7d2fe;
+}
+
+/* Batch 3: dark mode (Settings / rail toggle sets html[data-theme="dark"]). */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-canvas: #17120e;
+  --bg-surface: #221a14;
+  --bg-sunken: #2d231b;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  --ink-primary: #f3e9df;
+  --ink-secondary: #c2ab96;
+  --ink-disabled: #7d6a5a;
+  --ink-inverse: #17120e;
+  --brand-primary: #e0a96d;
+  --brand-primary-press: #c98f52;
+  --brand-primary-soft: #3a2b1e;
+  --accent-teal: #14a394;
+  --accent-teal-soft: #123c38;
+  --accent-teal-press: #0f8a7d;
+  --online: #2dd4bf;
+  --offline: #f59e0b;
+  --success: #4ade80;
+  --success-soft: #14321f;
+  --warn: #fbbf24;
+  --warn-soft: #3a2c0c;
+  --danger: #f87171;
+  --danger-soft: #3b1515;
+  --info: #2dd4bf;
+  --info-soft: #123c38;
+  --border-subtle: #3a2e24;
+  --border-strong: #55453a;
+  --focus-ring: #14b8a6;
+  --elev-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --elev-2: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --tone-neutral: #cbd5e1;
+  --tone-neutral-soft: #263040;
+}
+html[data-theme="dark"] .initial-badge { filter: brightness(0.85) saturate(1.1); }
+html[data-theme="dark"] .product-thumb-preview { background: var(--bg-surface); }

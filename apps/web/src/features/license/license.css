@@ -1,0 +1,42 @@
+/* Licence UI: square corners, theme tokens only. */
+.lic-panel { width: min(560px, 100%); max-height: calc(100vh - 48px); overflow: auto; background: var(--bg-surface); color: var(--ink-primary); border: 1px solid var(--border-strong); border-top: 3px solid var(--accent-teal); padding: 20px 22px; box-shadow: 0 12px 40px rgba(0,0,0,.18); }
+.lic-panel__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.lic-panel__head h2 { margin: 0; font-size: 20px; }
+.lic-badge { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; font: 700 12px/1 var(--font-sans); letter-spacing: .04em; text-transform: uppercase; border: 1px solid currentColor; }
+.lic-badge--ok { color: var(--success); background: var(--success-soft); }
+.lic-badge--warn { color: var(--warn); background: var(--warn-soft); }
+.lic-badge--bad { color: var(--danger); background: var(--danger-soft); }
+.lic-facts { margin: 0 0 14px; border: 1px solid var(--border-subtle); }
+.lic-facts__row { display: grid; grid-template-columns: 170px 1fr; border-top: 1px solid var(--border-subtle); }
+.lic-facts__row:first-child { border-top: 0; }
+.lic-facts dt { margin: 0; padding: 7px 10px; background: var(--bg-sunken); color: var(--ink-secondary); font-size: 13px; }
+.lic-facts dd { margin: 0; padding: 7px 10px; font-weight: 600; font-size: 14px; }
+.lic-code { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 6px 0 12px; }
+.lic-code__value { white-space: nowrap; font: 700 20px/1.2 ui-monospace, Consolas, monospace; letter-spacing: 1px; padding: 8px 12px; border-radius: 0; background: var(--bg-sunken); border: 1px solid var(--border-subtle); color: var(--ink-primary); direction: ltr; user-select: all; }
+.lic-key { width: 100%; min-height: 84px; font: 13px/1.4 ui-monospace, Consolas, monospace; direction: ltr; padding: 10px; border-radius: 0; border: 1px solid var(--border-strong); background: var(--bg-surface); color: var(--ink-primary); box-sizing: border-box; resize: vertical; }
+.lic-key:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 0; }
+.lic-actions { display: flex; gap: 8px; margin-top: 14px; }
+.lic-msg { margin: 0 0 12px; padding: 9px 12px; border-radius: 0; border-left: 3px solid currentColor; font-size: 14px; }
+.lic-msg--err { background: var(--danger-soft); color: var(--danger); }
+.lic-msg--warn { background: var(--warn-soft); color: var(--warn); }
+.lic-msg--ok { background: var(--success-soft); color: var(--success); }
+.lic-banner { position: fixed; right: 12px; bottom: 12px; z-index: 50; display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 12px; border-radius: 0; background: var(--warn-soft); color: var(--warn); border: 1px solid var(--warn); font-size: 13px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.lic-banner button { font-size: 13px; padding: 4px 10px; }
+.lic-banner__hours { font-weight: 700; }
+.lic-banner--ok { background: var(--success-soft); color: var(--success); border-color: var(--success); padding: 8px 12px; }
+.lic-modal { position: fixed; inset: 0; background: var(--bg-overlay); display: grid; place-items: center; z-index: 100; padding: 24px; }
+
+/* Read-only (trial ended): strip centred in the top bar + toast for refused changes. */
+.lic-ro { position: fixed; top: 7px; left: 50%; transform: translateX(-50%); z-index: 60; display: flex; align-items: stretch; height: 34px; border: 1px solid var(--danger); background: var(--danger-soft); color: var(--danger); font: 600 13px/1 var(--font-sans); white-space: nowrap; }
+.lic-ro__label { display: flex; align-items: center; padding: 0 12px; background: var(--danger); color: #fff; }
+.lic-ro__text { display: flex; align-items: center; padding: 0 12px; }
+.lic-ro__btn { border: 0; border-left: 1px solid var(--danger); border-radius: 0; padding: 0 14px; background: var(--bg-surface); color: var(--danger); font: inherit; cursor: pointer; }
+.lic-ro__btn:hover { background: var(--danger); color: #fff; }
+.lic-ro__btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+.lic-toast { position: fixed; right: 16px; bottom: 16px; z-index: 90; display: flex; align-items: center; gap: 12px; padding: 10px 12px 10px 14px; border: 1px solid var(--danger); border-left-width: 4px; background: var(--bg-surface); color: var(--ink-primary); font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+/* Sell in read-only: the pay bar becomes a lock line. */
+.pos-ro-lock { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px; border: 1px solid var(--danger); background: var(--danger-soft); color: var(--danger); font-weight: 600; }
+/* Settings summary */
+.lic-summary { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.lic-summary__text { color: var(--ink-secondary); font-size: 14px; }
+@media (max-width: 1100px) { .lic-ro__text { display: none; } }

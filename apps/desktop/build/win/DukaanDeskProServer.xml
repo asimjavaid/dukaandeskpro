@@ -1,0 +1,20 @@
+<!-- WinSW (MIT) service definition, copied next to DukaanDeskProServer.exe (= WinSW-x64.exe renamed).
+     UNTESTED ON WINDOWS. %BASE% = resources\winsw. -->
+<service>
+  <id>DukaanDeskProServer</id>
+  <name>DukaanDesk Pro Server</name>
+  <description>DukaanDesk Pro shop server for the tills on this network.</description>
+  <executable>%BASE%\..\..\DukaanDesk Pro.exe</executable>
+  <arguments>"%BASE%\..\app.asar.unpacked\src\server-service.js"</arguments>
+  <env name="ELECTRON_RUN_AS_NODE" value="1"/>
+  <env name="DD_API_MAIN" value="%BASE%\..\api\dist\main.js"/>
+  <depend>DukaanDeskProPG</depend>
+  <startmode>Automatic</startmode>
+  <delayedAutoStart>false</delayedAutoStart>
+  <onfailure action="restart" delay="5 sec"/>
+  <onfailure action="restart" delay="30 sec"/>
+  <resetfailure>1 hour</resetfailure>
+  <logpath>%ProgramData%\dukaandeskpro\logs</logpath>
+  <log mode="roll-by-size"><sizeThreshold>10240</sizeThreshold><keepFiles>5</keepFiles></log>
+  <stoptimeout>15 sec</stoptimeout>
+</service>

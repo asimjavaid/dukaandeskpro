@@ -1,0 +1,11 @@
+{
+  "name": "@dukaandeskpro/license",
+  "version": "0.0.1",
+  "private": true,
+  "description": "DukaanDesk Pro trial + offline Ed25519 licence (verify only; no private key here). Zero dependencies.",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "test": "node test/license.test.js && node test/license-v2.test.js && node test/license-separation.test.js"
+  }
+}

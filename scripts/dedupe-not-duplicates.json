@@ -1,0 +1,95 @@
+{
+  "note": "Pairs Asim confirmed are different products (21 Oct 2026). dedupe-names.cjs never merges or lists them. b = null: never list this item.",
+  "pairs": [
+    {
+      "a": {
+        "id": "ba618ed8-e0b6-47dc-9687-28b927b936db",
+        "name": "Guard Rice 1 kg"
+      },
+      "b": {
+        "id": "92ddb3b2-71ef-4366-a13f-f4534679fa55",
+        "name": "Guard Supreme Basmati Rice 1 kg"
+      },
+      "why": "different rice"
+    },
+    {
+      "a": {
+        "id": "7421962e-4954-43dd-acde-52145417c324",
+        "name": "Super Kernel Basmati 1 kg"
+      },
+      "b": {
+        "id": "22ed7401-cd91-44d5-aac6-8dd63c2b0cc9",
+        "name": "Falak Select Super Kernel Basmati 1 kg"
+      },
+      "why": "different rice"
+    },
+    {
+      "a": {
+        "id": "ae865654-58b0-402e-9910-fae969da2373",
+        "name": "Lux Soap 128 g"
+      },
+      "b": {
+        "id": "57616fee-da02-4e71-8cf3-44635457b3ff",
+        "name": "Lux Soap Velvet Glow 128 g"
+      },
+      "why": "soaps: separate"
+    },
+    {
+      "a": {
+        "id": "314124f7-f08c-4b31-98ad-55b217203197",
+        "name": "Dettol Soap 115 g"
+      },
+      "b": {
+        "id": "dab566ab-da17-4895-8538-b2b6f3cb22bb",
+        "name": "Dettol Soap Cool 110 g"
+      },
+      "why": "soaps: separate"
+    },
+    {
+      "a": {
+        "id": "d51aea5e-75be-4c4e-8b69-dfc500ddb158",
+        "name": "Sufi Soap 140 g"
+      },
+      "b": {
+        "id": "fe73409c-b0d8-408b-99e6-aeb7aac306e1",
+        "name": "Sufi Classic Beauty Soap 130 g"
+      },
+      "why": "soaps: separate"
+    },
+    {
+      "a": {
+        "id": "3cf0b9a0-7146-4527-923d-f4c40aacf510",
+        "name": "Kolson Slanty 60 g"
+      },
+      "b": {
+        "id": "269c056f-b471-4235-a773-a0ab0464b2dc",
+        "name": "Kolson Slanty Salted 63 g"
+      },
+      "why": "different pack"
+    },
+    {
+      "a": {
+        "id": "008333ac-b84e-452a-bb84-1047b72231a0",
+        "name": "National Biryani Masala"
+      },
+      "b": null,
+      "why": "own item, no size in name"
+    },
+    {
+      "a": {
+        "id": "45fabc7d-a2a1-4db7-b613-752e57d69a3a",
+        "name": "Shan Karahi Masala"
+      },
+      "b": null,
+      "why": "own item, no size in name"
+    },
+    {
+      "a": {
+        "id": "ceac4529-3e14-4f4d-bee5-d7e798ea8aac",
+        "name": "Lifebuoy Soap"
+      },
+      "b": null,
+      "why": "soaps: separate"
+    }
+  ]
+}

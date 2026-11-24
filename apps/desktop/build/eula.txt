@@ -1,0 +1,36 @@
+DUKAANDESK SOFTWARE LICENCE AGREEMENT (END-USER)
+
+Please read this before installing. By installing or using DukaanDesk Pro you agree to these terms.
+
+1. Trial. You may use DukaanDesk Pro free for 14 days or 200 hours of use, whichever comes first.
+   After the trial DukaanDesk Pro becomes read-only until you activate it: you can still view,
+   print, export and back up your data. Nothing is deleted.
+
+2. Licence. When you pay and activate, you receive a perpetual (lifetime) licence to use
+   DukaanDesk Pro in ONE shop on ONE computer (one till). The activation key works only on the
+   computer it was issued for. If you change or repair the computer, ask your seller for a
+   new key (see the seller's re-issue policy).
+
+3. Your data. Your shop data stays on your computer and belongs to you. DukaanDesk Pro does not
+   send your data anywhere. Keep regular backups; you are responsible for your backups.
+
+4. Updates. Your licence includes the updates released up to the "updates until" date shown
+   on the Licence screen. Versions released up to that date are yours to keep and use forever.
+   Newer versions need a renewal (Care) key.
+
+5. Not allowed. You may not copy, share, resell, rent or lend DukaanDesk Pro or your key, use one
+   licence in more than one shop or computer, or reverse engineer, modify or bypass the
+   licence check, except where the law allows it.
+
+6. Support and refunds. Support, setup and refunds are given by your seller under the seller's
+   published terms.
+
+7. No warranty. DukaanDesk Pro is provided "as is". To the extent the law allows, the seller is not
+   liable for lost profits, lost data or indirect damages. The seller's total liability is
+   limited to the price you paid for the licence.
+
+8. Taxes. You are responsible for your own tax filing and records.
+
+9. Law. These terms are governed by the laws of Pakistan.
+
+Copyright (c) Sturer. DukaanDesk Pro is a trademark of its owner.

@@ -1,0 +1,225 @@
+/*
+ * Square + flush layout. Loaded after global.css. Corner radius and
+ * chrome colours are tokens in tokens.css.
+ */
+/* Boxes: square. */
+.card,
+.pos-modal,
+[role='dialog'],
+.catalog-table-wrap,
+.catalog__panel,
+.pos-pane--cart,
+.pos-pick-list,
+.pos-sale-tabs,
+.pos-customer-bar,
+.pos-pay-bar,
+.settings-section,
+.analytics-kpi,
+.analytics-box,
+.analytics-stat,
+.backup-panel,
+.purchases-hub,
+.purchases-aside,
+.packs-panel,
+.os-foot,
+.stock-count-card,
+.parties__panel,
+.sales__panel {
+  border-radius: var(--radius-box);
+}
+
+.initial-badge,
+.product-thumb {
+  border-radius: var(--radius);
+}
+
+/* ── Flush shell: rail + top bar + content share edges, 1px dividers ── */
+.shell {
+  background: var(--content-bg);
+}
+
+.shell__header {
+  background: var(--chrome-bg);
+  border-bottom: 1px solid var(--chrome-border);
+  min-height: 44px;
+}
+
+.shell__title {
+  color: var(--chrome-ink-strong);
+}
+
+.shell__rail {
+  background: var(--chrome-bg);
+  border-inline-end: 1px solid var(--chrome-border);
+  padding: var(--space-2) 0;
+}
+
+.shell__rail-heading {
+  color: var(--chrome-muted);
+}
+
+.shell__rail-group--actions {
+  border-block-start-color: var(--chrome-border);
+}
+
+.shell__nav-item {
+  border: 0;
+  border-radius: 0;
+  border-inline-start: 3px solid transparent;
+  padding-inline: calc(var(--space-3) - 3px) var(--space-3);
+  color: var(--chrome-ink);
+}
+
+.shell__nav-item:hover {
+  background: var(--chrome-hover);
+  color: var(--chrome-ink-strong);
+}
+
+.shell__nav-item.is-active,
+.shell__nav-item.is-active:hover {
+  background: var(--chrome-active-bg);
+  color: var(--chrome-active-ink);
+  border-color: transparent;
+  border-inline-start-color: var(--chrome-active-bar);
+}
+
+.shell__main {
+  padding: 0;
+  gap: 0;
+  background: var(--content-bg);
+}
+
+/* The view's outer card becomes the page itself: no border, gap or shadow. */
+.shell__main > .card,
+.shell__main > .purchases-hub,
+.shell__main > div:not([class]) {
+  flex-grow: 1;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--content-bg);
+  padding: var(--space-4) var(--space-5);
+}
+
+/* Title row = flat page header attached to the content, divided by 1px. */
+.shell__main > .card > .page-head,
+.shell__main > .card > header:first-child,
+.shell__main > div:not([class]) > .card:first-child > .page-head:first-child {
+  margin: calc(-1 * var(--space-4)) calc(-1 * var(--space-5)) var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  background: var(--head-bg);
+  border-bottom: 1px solid var(--border-subtle);
+  align-items: center;
+}
+
+.page-head__title {
+  font: var(--type-subtitle);
+  font-size: 18px;
+}
+
+/* Nested panels: flat, bordered. */
+.shell__main .card .card {
+  box-shadow: none;
+}
+
+/* Login screen keeps a framed card. */
+.shell__main > .auth-card {
+  flex: 0 0 auto;
+  border: 1px solid var(--border-subtle);
+}
+
+/* Tables: square, header on sunken surface. */
+.catalog-table th {
+  border-radius: 0;
+}
+
+/* Views wrapped in a plain div (Repack): inner card is flat too. */
+.shell__main > div:not([class]) > .card {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+.shell__main > div:not([class]) > .card:first-child > .page-head:first-child {
+  margin-inline: calc(-1 * var(--space-5));
+  margin-block-start: calc(-1 * var(--space-4));
+}
+
+/* Header widgets on the charcoal top bar. */
+.shell__header .chip--session {
+  background: var(--chrome-widget-bg);
+  border-color: var(--chrome-widget-border);
+  color: var(--chrome-widget-ink);
+}
+.shell__header .notif-bell {
+  background: transparent;
+  border-color: var(--chrome-widget-border);
+  color: var(--chrome-widget-ink);
+}
+
+/* Nav dividers: engraved (dark groove + soft highlight), same colours as the rail, never white. */
+.shell__header {
+  border-bottom-color: var(--nav-rule-dark);
+}
+.shell__rail {
+  border-inline-end-color: var(--nav-rule-dark);
+}
+.shell__rail-group--actions {
+  border-block-start-color: var(--nav-rule-dark);
+  box-shadow: inset 0 1px 0 var(--nav-rule-light);
+}
+.shell__rail--collapsed .shell__rail-heading {
+  background: var(--nav-rule-dark);
+  box-shadow: 0 1px 0 var(--nav-rule-light);
+}
+@media (max-height: 740px) and (min-width: 900px) {
+  .shell__rail-heading {
+    background: var(--nav-rule-dark);
+    box-shadow: 0 1px 0 var(--nav-rule-light);
+  }
+}
+@media (max-width: 899px) {
+  .shell__rail,
+  .shell__rail--collapsed {
+    border-bottom-color: var(--nav-rule-dark);
+    box-shadow: 0 1px 0 var(--nav-rule-light);
+  }
+}
+
+/* Theme switcher (top bar, right): three square swatches A / B / C. */
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--chrome-widget-border);
+  background: var(--chrome-widget-bg);
+}
+.theme-switch__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+  padding: 0 6px 0 4px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--chrome-widget-ink);
+  font: 600 12px/1 var(--font-sans);
+  cursor: pointer;
+}
+.theme-switch__btn:hover { background: var(--chrome-hover); }
+.theme-switch__btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+.theme-switch__btn.is-active {
+  border-color: var(--chrome-active-bar);
+  background: var(--chrome-active-bg);
+  color: var(--chrome-active-ink);
+}
+/* Swatch = menu colour + button colour of that theme (fixed on purpose). */
+.theme-switch__swatch {
+  inline-size: 14px;
+  block-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.theme-switch__btn--a .theme-switch__swatch { background: linear-gradient(135deg, #e2e8f0 50%, #1d4ed8 50%); }
+.theme-switch__btn--b .theme-switch__swatch { background: linear-gradient(135deg, #1f2429 50%, #0f766e 50%); }
+.theme-switch__btn--c .theme-switch__swatch { background: linear-gradient(135deg, #e7e3dc 50%, #3730a3 50%); }

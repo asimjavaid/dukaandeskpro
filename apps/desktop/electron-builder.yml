@@ -1,0 +1,67 @@
+# DukaanDesk Pro Windows installer (NSIS + portable).
+# Run on Windows only: `pnpm package:win` from the repo root.
+# This Linux dev box cannot emit a .exe (no Wine; better-sqlite3 is host-native).
+# Manual updates only. No publish provider. Code signing is optional (see win: below).
+# Licence: the build is stamped (build date + signed manifests) by scripts/package-win.mjs,
+# which must run on the owner's PC (it needs the private key and refuses the TEST key).
+
+appId: pk.sturer.dukaandeskpro
+productName: DukaanDesk Pro
+copyright: Copyright © Sturer
+asar: true
+# The main PC's server service runs these with the Electron binary as Node (outside the asar).
+asarUnpack:
+  - src/server-service.js
+  - src/server-config.js
+directories:
+  output: ../../dist-desktop
+files:
+  - src/**
+  - build/icon.*
+  - package.json
+extraResources:
+  # Built React app (pnpm build:web)
+  - from: ../web/dist
+    to: web
+  # pnpm deploy of @dukaandeskpro/api (dist + production node_modules, Windows natives)
+  - from: staged/api
+    to: api
+  # Lite main PC: PostgreSQL 17 Windows binaries (PostgreSQL licence) + WinSW service wrapper (MIT),
+  # fetched by scripts/fetch-win-runtime.mjs. Till PCs get them too (one installer) but never run them.
+  - from: staged/pgsql
+    to: pgsql
+  - from: staged/winsw
+    to: winsw
+  - from: build/win
+    to: win
+    filter:
+      - "*.ps1"
+afterPack: build/after-pack.cjs
+win:
+  icon: build/icon.ico
+  target:
+    - nsis
+    - portable
+  # Code signing (optional, later): put the .pfx path in CSC_LINK and its password in
+  # CSC_KEY_PASSWORD, then build with DD_SIGN=1 (scripts/package-win.mjs switches
+  # signAndEditExecutable on). Without a certificate the installer is unsigned.
+  signAndEditExecutable: false
+  signtoolOptions:
+    signingHashAlgorithms:
+      - sha256
+    rfc3161TimeStampServer: http://timestamp.digicert.com
+    publisherName: Sturer
+nsis:
+  oneClick: false
+  # Main PC / Main PC no till / Till PC page + service setup (build/win/installer.nsh).
+  include: build/win/installer.nsh
+  # Services, firewall and ProgramData need admin.
+  perMachine: true
+  # Licence agreement screen (one shop, one PC, data stays the shop's, updates per "updates until").
+  license: build/eula.txt
+  # Keep the trial record and shop data on uninstall (reinstalling must not reset the trial or lose data).
+  deleteAppDataOnUninstall: false
+  allowToChangeInstallationDirectory: true
+  artifactName: dukaandeskpro_${version}.${ext}
+portable:
+  artifactName: dukaandeskproportable_${version}.${ext}

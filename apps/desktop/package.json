@@ -1,0 +1,22 @@
+{
+  "name": "@dukaandeskpro/desktop",
+  "version": "0.0.1",
+  "private": true,
+  "description": "DukaanDesk Electron shell — loads React UI and spawns Nest sidecar",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "electron . --no-sandbox",
+    "start": "electron . --no-sandbox",
+    "start:prod": "node src/start-prod.js",
+    "package:win": "electron-builder --win --config electron-builder.yml"
+  },
+  "dependencies": {
+    "@dukaandeskpro/api": "workspace:*",
+    "@dukaandeskpro/license": "workspace:*"
+  },
+  "devDependencies": {
+    "@electron/fuses": "^1.8.0",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  }
+}
